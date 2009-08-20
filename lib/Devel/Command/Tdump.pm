@@ -2,7 +2,7 @@ package Devel::Command::Tdump;
 use strict;
 use base qw(Devel::Command);
 
-$Devel::Command::Tdump::VERSION = 1.0;
+$Devel::Command::Tdump::VERSION = "1.1";
 my %test_names = map { $_ => 1 } get_test_names();
 
 # Preload Test::More
