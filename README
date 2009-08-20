@@ -1,0 +1,28 @@
+Devel-Command-Tdump version 0.0.1
+
+This command provides a way to integrate Test::More directly into the
+debugger. You can execute tests directly in the debugger and then save
+them as test files without exiting the debugger.
+
+You will need the Devel::Command debugger command framework to be
+able to use this command.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+DEPENDENCIES
+
+None.
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005, Joe McMahon
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

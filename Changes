@@ -1,0 +1,6 @@
+Revision history for Devel-Command-Tdump
+
+0.0.1  Wed Aug 31 12:23:30 2005
+	- initial independent release
+	- repackaged to remove prereqs from Devel::Command
+
