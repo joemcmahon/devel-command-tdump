@@ -1,28 +1,38 @@
-Devel-Command-Tdump version 0.0.1
+Devel::Command::Tdump implements a debugger command, tdump, to 
+automatically load Test::More into the debugger and to selectively capture
+portions of the debugger history to build a new Test::More-based test.
 
-This command provides a way to integrate Test::More directly into the
-debugger. You can execute tests directly in the debugger and then save
-them as test files without exiting the debugger.
+If you use Test::More's tests (is(), ok(), etc.) during a debugger session,
+tdump can then dump these tests out to a test file (you pick a name) with the
+proper test plan already in place.
 
-You will need the Devel::Command debugger command framework to be
-able to use this command.
+Like this:
 
-INSTALLATION
+  DB<5> use_ok("MyModule");
+ok 1 - use MyModule;
 
-To install this module, run the following commands:
+  DB<6> $arg1 = "something";
 
-    perl Makefile.PL
-    make
-    make test
-    make install
+  DB<7> # set first argument
 
-DEPENDENCIES
+  DB<8> $arg2 = "yadda yadda";
 
-None.
+  DB<9> # Set second argument
 
-COPYRIGHT AND LICENCE
+  DB<10> $try_it = MyModule->new($arg1, $arg2)
 
-Copyright (C) 2005, Joe McMahon
+  DB<11> # Create an object
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+  DB<12> isa_ok($try_it, "MyModule")
+
+  DB<13> tdump "001basic.t"
+Recording tests for this session in 001basic.t ... done (2 tests).
+
+  DB<14>
+
+To install:
+
+  perl Makefile.PL
+  make
+  make test
+  make install

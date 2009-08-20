@@ -1,9 +1,12 @@
 Changes
-MANIFEST
-META.yml # Will be created by "make dist"
-Makefile.PL
-README
 lib/Devel/Command/Tdump.pm
-t/00.load.t
-t/pod-coverage.t
-t/pod.t
+LICENSE
+Makefile.PL
+MANIFEST
+META.yml
+README
+t/001_load.t
+t/002_is_a_test.t
+t/003_is_a_sub.t
+t/004_get_test_names.t
+t/005_tdump.t
